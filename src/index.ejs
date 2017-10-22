@@ -17,8 +17,13 @@
 <% const menuItems = [
     {title: 'HairCare', link: '#'},
     {title: 'Color', link: '#'},
-    {title: 'Styling', link: '#'}
-    /* ... */
+    {title: 'Styling', link: '#'},
+    {title: 'Texture', link: '#'},
+    {title: 'Get Inspired', link: '#'},
+    {title: 'Social', link: '#'},
+    {title: 'News', link: '#'},
+    {title: 'About', link: '#'},
+    {title: 'Professional', link: '#'}
 ]; %>
 
 <header class="header">
@@ -27,7 +32,7 @@
     <div class="header__bottom">
         <div class="menu header__menu">
             <% menuItems.forEach((item) => { %>
-            <li class="menu__item"><a class="menu__link" href="<%= item.link; %>"><%= item.title %></a></li>
+            <li class="menu__item"><a class="menu__link" href="<%= item.link %>"><%= item.title %></a></li>
             <% }) %>
         </div>
     </div>
