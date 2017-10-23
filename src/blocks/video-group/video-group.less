@@ -1,0 +1,27 @@
+.video-group {
+    &__title {
+        font-weight: bold;
+        font-size: 26px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        display: inline-block;
+
+        @media @tablet-strict {
+            padding-left: 50px;
+        }
+
+        @media @desktop {
+            font-size: 48px;
+            margin-bottom: 0;
+            padding-left: 80px;
+        }
+
+        &_narrow {
+            word-spacing: -3px;
+        }
+
+        &_stress {
+            color: red;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+@import 'media';
+@import 'colors';
+@import 'blocks/slider/slider';
+@import 'blocks/video-group/video-group';
+
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+body {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.container {
+    margin: auto;
+
+    @media @tablet-strict {
+        max-width: @sm-min;
+    }
+
+    @media @desktop {
+        max-width: @lg-min;
+    }
+}
+
+.video-group {
+    margin-bottom: 58px;
+
+    @media @desktop {
+        margin-bottom: 20px;
+    }
+
+    @media @phone-strict {
+        width: 310px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

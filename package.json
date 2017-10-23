@@ -14,7 +14,9 @@
     "browser-sync": "^2.18.11",
     "eslint": "^3.19.0",
     "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
     "gulp-ejs": "^3.0.1",
+    "gulp-flatten": "^0.3.1",
     "gulp-rename": "^1.2.2",
     "stylelint": "^7.10.1"
   },
