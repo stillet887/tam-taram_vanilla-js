@@ -18,6 +18,7 @@ function slider_init(options){
 
         var url = 'https://img.youtube.com/vi/' + id + '/maxresdefault.jpg';
         slide.style.backgroundImage = "url(" + url + ")";
+        slide.dataset.youtubeId = id;
         slide.onclick = options.img_event;
         container.appendChild(slide);
     });
