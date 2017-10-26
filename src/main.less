@@ -5,6 +5,7 @@
 @import 'blocks/slider/slider';
 @import 'blocks/video-group/video-group';
 @import 'blocks/modal-video-box/modal-video-box';
+@import 'blocks/footer/footer';
 
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
@@ -60,5 +61,12 @@ body {
 
     @media @desktop {
         height: calc(~"100% - 90px");
+    }
+}
+
+.header {
+    @media @tablet {
+        position: fixed;
+        z-index: 20;
     }
 }

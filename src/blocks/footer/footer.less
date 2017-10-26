@@ -1,0 +1,90 @@
+.footer {
+    background: @main-theme;
+    text-transform: uppercase;
+    color: @footer-text;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+
+    @media @phone-strict {
+        height: 325px;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-bottom: 155px;
+        box-sizing: content-box;
+    }
+
+    &__group {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__link {
+        color: @footer-text-secondary;
+        text-decoration: none;
+    }
+
+    &__icon {
+        height: 18px;
+        margin: 0 9px;
+    }
+
+    &__item {
+        display: inline-block;
+        font-size: 12px;
+
+        &_wide {
+            margin-right: 2px;
+        }
+    }
+
+    &__params {
+        font-size: 11px;
+        text-align: right;
+
+        @media @phone-strict {
+            text-align: left;
+            position: relative;
+            top: -3px;
+        }
+    }
+
+    &__nav-links, &__params {
+        width: 200px;
+        line-height: 10px;
+
+        @media @desktop {
+            line-height: 19px;
+        }
+
+        @media @tablet-strict {
+            position: relative;
+            top: -5px;
+        }
+
+        @media @phone-strict {
+           padding-left: 9px;
+        }
+    }
+
+    &__nav-links {
+        @media @phone-strict {
+            margin-bottom: 155px;
+            width: 250px;
+        }
+    }
+
+    &__social-networks {
+        @media @phone-strict {
+            padding-top: 32px;
+            order: 1;
+        }
+    }
+
+    &__param-value {
+        color: white;
+    }
+}

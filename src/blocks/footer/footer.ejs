@@ -1,0 +1,34 @@
+<div class="footer container-fluid">
+    <ul class="footer__group footer__nav-links">
+        <% let nav_links = ['privacy policy', 'terms of use', 'contact us', 'newsletter', 'sitemap'] %>
+        <% nav_links.forEach(function (link) { %>
+            <li class="footer__item footer__item_wide"><a href="#" class="footer__link"><%= link %></a></li>
+        <% }) %>
+    </ul>
+    <ul class="footer__group footer__social-networks">
+        <% let social_networks = [
+            { icon: 'img/ico_facebook.svg', link: 'https://www.facebook.com' },
+            { icon: 'img/ico_twitter.svg', link: 'https://twitter.com' },
+            { icon: 'img/ico_pinterest.svg', link: 'https://www.pinterest.com' },
+            { icon: 'img/ico_youtube.svg', link: 'https://www.youtube.com' },
+            { icon: 'img/ico_instagram.svg', link: 'https://www.instagram.com' }
+        ] %>
+        <% social_networks.forEach(function (network) { %>
+        <li class="footer__item"><a href= <%= network.link %> class="footer__link"><img class="footer__icon" src= <%= network.icon %>></a></li>
+        <% }) %>
+    </ul>
+    <ul class="footer__group footer__params">
+        <% let params = [
+            { name: 'location', value: 'United States' },
+            { name: 'language', value: 'english' }
+        ] %>
+        <% params.forEach(function (param) { %>
+        <li class="footer__param">
+            <span class="footer__param-name"><%= param.name %>: </span>
+            <span class="footer__param-value"><%= param.value %></span>
+        </li>
+        <% }) %>
+    </ul>
+</div>
+
+
