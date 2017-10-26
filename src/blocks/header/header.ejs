@@ -1,0 +1,21 @@
+<header class="header">
+    <div class="header__top">
+        <img class="header__close-button" src="img/menu_close.png">
+        <div class="header__menu-button"></div>
+        <img class="header__logo" src="img/logo.svg">
+    </div>
+    <ul class="header__nav">
+        <% const items = ['haircare', 'color', 'styling', 'texture', 'get inspired', 'social', 'news', 'about', 'professional'] %>
+        <% items.forEach((item,index,items) => { %>
+            <% let selected = '' %>
+            <% if(index == items.length - 1){ selected = 'header__link_selected' } %>
+            <li class="header__link <%= selected %>">
+                <a><%= item %></a>
+            </li>
+        <% }); %>
+    </ul>
+    <div class="header__bottom container-fluid">
+        <%- include('../custom-select/custom-select') -%>
+        <div class="header__search"></div>
+    </div>
+</header>

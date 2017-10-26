@@ -1,0 +1,61 @@
+.custom-select {
+    color: white;
+    font-size: 11px;
+    width: 90px;
+    cursor: pointer;
+
+    &__title {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 10px;
+
+        &::after {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: url('img/ico_dropdown.svg') no-repeat;
+            position: relative;
+            top: 6px;
+            left: 3px;
+        }
+    }
+
+    &__dropdown {
+        position: relative;
+
+        &:hover {
+            .custom-select__options {
+                max-height: 100px;
+            }
+        }
+    }
+
+    &__options {
+        width: 110%;
+        overflow: hidden;
+        max-height: 0;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        background: @nav;
+        text-transform: none;
+    }
+
+    &__option {
+        padding: 0 5px;
+        transition: background 0.5s linear;
+
+        &:hover {
+            background: @main-theme;
+        }
+
+        &_selected {
+            border-style: solid;
+            border-color: white;
+            border-width: 1px 0;
+            margin: 2px 0;
+        }
+    }
+}

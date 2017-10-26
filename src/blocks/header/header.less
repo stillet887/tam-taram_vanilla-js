@@ -1,0 +1,186 @@
+.header {
+    background-color: @main-theme;
+
+    @media @phone-strict {
+        background-color: @nav;
+    }
+
+    &__top {
+        background-color: @nav;
+        height: 70px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media @desktop {
+            height: 56px;
+        }
+    }
+
+    &__menu-button {
+        width: 32px;
+        height: 2px;
+        background-color: white;
+        margin: 0 10px;
+        position: relative;
+        left: -25px;
+
+        @media @tablet {
+            display: none;
+        }
+
+        &::after,
+        &::before {
+            content: '';
+            display: block;
+            width: 32px;
+            height: 2px;
+            background-color: white;
+            position: relative;
+        }
+
+        &::before {
+            top: -10px;
+        }
+
+        &::after {
+            top: 7px;
+        }
+
+        &_pressed {
+            opacity: 0;
+            animation: button_rotate 2s ease-in-out;
+
+            &::after,
+            &::before {
+                opacity: 0;
+            }
+        }
+    }
+
+
+    &__close-button {
+        position: relative;
+        left: 23px;
+        width: 45px;
+        opacity: 0;
+        transition: opacity 0.5s ease-out;
+        animation: button_rotate_back 1s ease-out;
+
+        @media @tablet {
+            display: none;
+        }
+
+        &_visible {
+            opacity: 1;
+            animation: button_rotate 1s ease-in-out;
+        }
+    }
+
+    &__logo {
+        width: 340px;
+
+        @media @phone-strict {
+            width: 234px;
+            position: relative;
+            left: -25px;
+        }
+    }
+
+    &__nav {
+        list-style: none;
+        background-color: @main-theme;
+        margin: 0;
+        padding: 0;
+        color: white;
+        text-align: center;
+
+        @media @desktop {
+            width: @md-min;
+            margin: 0 auto;
+        }
+
+        @media @tablet {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media @phone-strict {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 1s linear;
+            width: 300px;
+            margin: 0 auto;
+            position: relative;
+            top: -15px;
+
+            &_mobile-opened {
+                max-height: 175px;
+            }
+        }
+
+    }
+
+    &__link {
+        padding: 9px 0;
+        width: 97px;
+        display: inline-block;
+        text-transform: uppercase;
+        font-family: 'PT Sans Narrow', sans-serif;
+        font-size: 14px;
+        cursor: pointer;
+
+        &_selected {
+            background-color: black;
+        }
+    }
+
+    &__bottom {
+        height: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        top: 0;
+
+        @media @desktop {
+            height: 56px;
+        }
+
+        @media @phone-strict {
+            position: static;
+            background-color: @main-theme;
+            height: 50px;
+        }
+
+
+    }
+
+    &__search {
+        width: 20px;
+        height: 20px;
+        background-image: url('img/ico_search.svg');
+        cursor: pointer;
+    }
+}
+
+@keyframes button_rotate {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes button_rotate_back {
+    from {
+        transform: rotate(180deg);
+    }
+
+    to {
+        transform: rotate(0);
+    }
+}

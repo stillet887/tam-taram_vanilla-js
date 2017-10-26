@@ -1,0 +1,16 @@
+<div class="custom-select">
+    <div class="custom-select__dropdown">
+        <div class="custom-select__title">Nearest salon</div>
+        <ul class="custom-select__options">
+            <% let options = ['Plush Salon 92101', 'Chaltyr, 92101', 'Another salon 1', 'Another salon 2', 'Another salon 3'] %>
+            <% options.forEach((option,index) => { %>
+            <% let selected = '' %>
+            <% if(index == 1){ selected = 'custom-select__option_selected' } %>
+            <li class="custom-select__option <%= selected %>">
+                <%= option %>
+            </li>
+            <% }); %>
+        </ul>
+    </div>
+    <div class="custom-select__current-value">Chaltyr, 92101</div>
+</div>
