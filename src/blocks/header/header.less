@@ -121,7 +121,6 @@
                 max-height: 175px;
             }
         }
-
     }
 
     &__link {
@@ -132,6 +131,10 @@
         font-family: 'PT Sans Narrow', sans-serif;
         font-size: 14px;
         cursor: pointer;
+
+        @media @tablet-strict {
+            padding: 12px 0;
+        }
 
         &_selected {
             background-color: black;
@@ -155,8 +158,6 @@
             background-color: @main-theme;
             height: 50px;
         }
-
-
     }
 
     &__search {

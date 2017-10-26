@@ -14,7 +14,6 @@ function onYouTubePlayerAPIReady() {
     player = new YT.Player('js-player', {
         height: '360',
         width: '640',
-        // videoId: 'z8M0Fa1JVco',
         playerVars: {
             rel: 0,
             controls: 0,

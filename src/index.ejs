@@ -14,24 +14,39 @@
 
 <%- include('blocks/header/header') -%>
 
-<div class="container">
-    <div class="h-video-group video-group js-step-by-step">
-        <h2 class="video-group__title video-group__title_narrow">
-            Step <span class="video-group__title_stress">by</span> step
-        </h2>
-        <%- include('blocks/slider/slider') -%>
+<div class="content-wrapper">
+    <% let breadcrumbs = { category: 'home', subcategory: 'videos'} %>
+    <%- include('blocks/breadcrumbs/breadcrumbs', {breadcrumbs: breadcrumbs}) -%>
+
+    <div class="content-container">
+        <h1 class="page-title">Videos</h1>
+
+        <iframe class="main-video" src="https://www.youtube.com/embed/Jp594-ajK5E?rel=0&amp;controls=0&amp;showinfo=0"
+                frameborder="0" allowfullscreen></iframe>
+
+        <div class="main-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lobortis, nisl at
+            ullamcorper egestas, felisadi piscing dolor, a interdum lorem uma quis magna.
+        </div>
     </div>
 
-    <div class="h-video-group video-group js-education">
-        <h2 class="video-group__title">
-            Craft <span class="video-group__title_stress">education</span>
-        </h2>
-        <%- include('blocks/slider/slider') -%>
-    </div>
-
-    <div class="h-video-group video-group js-inspiration">
-        <h2 class="video-group__title">Inspiration</h2>
-        <%- include('blocks/slider/slider') -%>
+    <div class="container">
+        <div class="video-group js-step-by-step">
+            <h2 class="video-group__title video-group__title_narrow">
+                Step <span class="video-group__title_stress">by</span> step
+            </h2>
+            <%- include('blocks/slider/slider') -%>
+        </div>
+        <div class="video-group js-education">
+            <h2 class="video-group__title">
+                Craft <span class="video-group__title_stress">education</span>
+            </h2>
+            <%- include('blocks/slider/slider') -%>
+        </div>
+        <div class="video-group js-inspiration">
+            <h2 class="video-group__title">Inspiration</h2>
+            <%- include('blocks/slider/slider') -%>
+        </div>
     </div>
 </div>
 
