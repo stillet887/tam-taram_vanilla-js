@@ -8,12 +8,17 @@ function slider_init(options){
         load_more_button =  slider.querySelector('.slider__load-more'),
         container = slider.querySelector('.slider__container');
 
+    if(slides.length <=3 && screen.width < 768) {
+        slider.removeChild(load_more_button);
+        slider.style.height = '630px';
+    }
+
     slides.forEach(function(id, index){
         var slide = document.createElement('div');
         if( index >= 3) {
-            slide.className = 'slider__img slider__img_phone-transparency';
+            slide.className = 'slider__img unavailable slider__img_phone-transparency ';
         } else {
-            slide.className = 'slider__img';
+            slide.className = 'slider__img unavailable';
         }
 
         var url = 'https://img.youtube.com/vi/' + id + '/maxresdefault.jpg';
@@ -25,7 +30,8 @@ function slider_init(options){
 
     var slider_width = parseInt(window.getComputedStyle(slider).width),
         available_offset_to_left = 0,
-        available_offset_to_right = slides.length - slider_width/slide_width;
+        available_offset_to_right = Math.floor(slides.length - slider_width/slide_width);
+
 
     container.style.left = 0;
     update_arrows_styles();
@@ -78,6 +84,7 @@ function slider_init(options){
         slider.querySelectorAll('.slider__img_phone-transparency').forEach(function(slide){
             slide.classList.remove('slider__img_phone-transparency');
         });
-        slider.style.height = slides.length * 225 + 35 + 'px';
+        slider.style.height = slides.length * 225 - 45 + 'px';
+        slider.removeChild(load_more_button);
     }
 }

@@ -1,0 +1,40 @@
+.search {
+    position: relative;
+    height: 30px;
+    width: 200px;
+
+    &__icon {
+        width: 25px;
+        height: 25px;
+        background-image: url('img/ico_search.svg');
+        cursor: pointer;
+        position: absolute;
+        right: 5px;
+        top: 3px;
+        transition: filter 0.3s ease;
+    }
+
+    &__input {
+        float: right;
+        padding: 3px 30px 3px 7px;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 0;
+        height: 100%;
+        background: none;
+        border: none;
+        outline: none;
+        transition: background 0.4s ease, max-width 0.3s ease;
+    }
+
+    &_open {
+        .search__input{
+            max-width: 100%;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .search__icon {
+            filter: brightness(0);
+        }
+    }
+}

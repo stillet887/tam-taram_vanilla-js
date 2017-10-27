@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", ready);
 
 function ready() {
+    resize_main_video_cover();
+
     var step_by_step_options = {
         slider: document.querySelector('.js-step-by-step .slider'),
         slides: ['z8M0Fa1JVco', 'Wi2KcdoCuo4', '8H6dYUgQKB8', 'PZjGrmHdFME', '_wLGr24VeoI', 'DG4FAU5qmMY'],
@@ -25,46 +27,11 @@ function ready() {
     slider_init(inspiration_options);
 }
 
-function onYouTubePlayerAPIReady() {
-    window.player = new YT.Player('js-player', {
-        height: '360',
-        width: '640',
-        playerVars: {
-            rel: 0,
-            autoplay: 1,
-            controls: 0,
-            showinfo: 0
-        },
-        events: {
-            'onStateChange': player_state_change
-        }
-    });
+main_video_cover = document.querySelector('.js-main-video-cover');
+main_video_cover.onclick = youtube_player_init;
 
-    window.main_player =  new YT.Player('js-main-player', {
-        height: '360',
-        width: '640',
-        videoId: 'Jp594-ajK5E',
-        playerVars: {
-            rel: 0,
-            controls: 0,
-            showinfo: 0
-        },
-        events: {
-            'onStateChange': main_player_state_change
-        }
-    });
-}
+window.onresize = resize_main_video_cover;
 
-main_player_cover = document.querySelector('.main-player-cover');
-main_player_cover.onclick = play_main_video;
-
-function play_main_video() {
-    window.main_player.playVideo();
-    main_player_cover.classList.add('main-player-cover_hidden');
-}
-
-function main_player_state_change(event) {
-    if(event.data == 0) {
-        main_player_cover.classList.remove('main-player-cover_hidden');
-    }
+function resize_main_video_cover() {
+    main_video_cover.style.height = main_video_cover.offsetWidth / 2 + 'px'
 }

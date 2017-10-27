@@ -1,13 +1,26 @@
 .custom-select {
     color: white;
-    font-size: 11px;
-    width: 90px;
+    width: 130px;
+    font-size: 14px;
     cursor: pointer;
+
+    @media @desktop {
+        font-size: 11px;
+        width: 115px;
+    }
 
     &__title {
         text-transform: uppercase;
         font-weight: bold;
         font-size: 10px;
+
+        @media @phone-strict {
+            font-size: 12px;
+        }
+
+        @media @tablet-strict {
+            font-size: 14px;
+        }
 
         &::after {
             content: '';
@@ -26,7 +39,7 @@
 
         &:hover {
             .custom-select__options {
-                max-height: 100px;
+                max-height: 500px;
             }
         }
     }
