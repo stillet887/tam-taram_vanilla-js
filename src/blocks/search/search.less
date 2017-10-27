@@ -1,7 +1,11 @@
 .search {
     position: relative;
     height: 30px;
-    width: 200px;
+    width: 150px;
+
+    @media @desktop {
+        width: 250px;
+    }
 
     &__icon {
         width: 25px;
@@ -30,7 +34,7 @@
     &_open {
         .search__input{
             max-width: 100%;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.85);
         }
 
         .search__icon {

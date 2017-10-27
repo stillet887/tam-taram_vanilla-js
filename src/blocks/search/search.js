@@ -1,6 +1,6 @@
-var search = document.querySelector('.search');
-var search_icon = search.querySelector('.search__icon')
-var search_input = search.querySelector('.search__input')
+const search = document.querySelector('.search');
+const search_icon = search.querySelector('.search__icon')
+const search_input = search.querySelector('.search__input')
 
 search_icon.onclick = open_search;
 search_input.onblur = close_search;

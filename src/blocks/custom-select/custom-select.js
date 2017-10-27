@@ -6,7 +6,7 @@ custom_select_options.forEach(function(option){
 });
 
 function change_selected_option(event) {
-    var new_select_option = event.target;
+    const new_select_option = event.target;
     custom_select_options.forEach(function(option){
         if(option != new_select_option) {
             option.classList.remove('custom-select__option_selected');

@@ -5,10 +5,10 @@
         <img class="header__logo" src="img/logo.svg">
     </div>
     <ul class="header__nav">
-        <% const items = ['haircare', 'color', 'styling', 'texture', 'get inspired', 'social', 'news', 'about', 'professional'] %>
-        <% items.forEach((item,index,items) => { %>
+        <% const items = ['haircare', 'color', 'styling', 'texture', 'get inspired', 'social', 'news', 'about', 'professional']; %>
+        <% items.forEach( (item, index, items) => { %>
             <% let selected = '' %>
-            <% if(index == items.length - 1){ selected = 'header__link_selected' } %>
+            <% if(index == items.length - 1) { selected = 'header__link_selected' } %>
             <li class="header__link <%= selected %>">
                 <a><%= item %></a>
             </li>

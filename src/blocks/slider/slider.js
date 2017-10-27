@@ -1,5 +1,5 @@
 function slider_init(options){
-    var slider = options.slider,
+    const slider = options.slider,
         slides = options.slides,
         slide_width = options.slide_width || 324,
         step = options.step || 1,
@@ -14,21 +14,21 @@ function slider_init(options){
     }
 
     slides.forEach(function(id, index){
-        var slide = document.createElement('div');
+        const slide = document.createElement('div');
         if( index >= 3) {
             slide.className = 'slider__img unavailable slider__img_phone-transparency ';
         } else {
             slide.className = 'slider__img unavailable';
         }
 
-        var url = 'https://img.youtube.com/vi/' + id + '/maxresdefault.jpg';
+        const url = 'https://img.youtube.com/vi/' + id + '/maxresdefault.jpg';
         slide.style.backgroundImage = 'url(' + url + ')';
         slide.dataset.youtubeId = id;
         slide.onclick = options.img_event;
         container.appendChild(slide);
     });
 
-    var slider_width = parseInt(window.getComputedStyle(slider).width),
+    let slider_width = parseInt(window.getComputedStyle(slider).width),
         available_offset_to_left = 0,
         available_offset_to_right = Math.floor(slides.length - slider_width/slide_width);
 
@@ -44,7 +44,7 @@ function slider_init(options){
 
     function scroll_left() {
         if (available_offset_to_left > 0) {
-            var displaceables_number = step < available_offset_to_left ? step : available_offset_to_left;
+            const displaceables_number = step < available_offset_to_left ? step : available_offset_to_left;
 
             container.style.left = parseInt(container.style.left) + slide_width * displaceables_number + 'px';
             available_offset_to_left -= displaceables_number;
@@ -56,7 +56,7 @@ function slider_init(options){
 
     function scroll_right() {
         if (available_offset_to_right > 0) {
-            var displaceables_number = step < available_offset_to_right ? step : available_offset_to_right;
+            const displaceables_number = step < available_offset_to_right ? step : available_offset_to_right;
 
             container.style.left = parseInt(container.style.left) - slide_width * displaceables_number + 'px';
             available_offset_to_left += displaceables_number;

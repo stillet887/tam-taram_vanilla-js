@@ -1,6 +1,6 @@
-var tag = document.createElement('script');
+const tag = document.createElement('script');
 tag.src = 'https://www.youtube.com/iframe_api';
-var firstScriptTag = document.getElementsByTagName('script')[0];
+const firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 function onYouTubePlayerAPIReady() {
@@ -20,12 +20,11 @@ function onYouTubePlayerAPIReady() {
     });
 }
 
-var player;
-var player_status = false;
-var modal = document.querySelector('.modal-video-box');
-var close_button = document.getElementById('js-video-modal-close');
-var video_cover = modal.querySelector('.modal-video-box__cover');
-var body = document.body;
+const modal = document.querySelector('.modal-video-box');
+const close_button = document.getElementById('js-video-modal-close');
+const video_cover = modal.querySelector('.modal-video-box__cover');
+const body = document.body;
+let player_status = false;
 
 close_button.onclick = close;
 video_cover.onclick = replay_video;
@@ -40,16 +39,16 @@ function youtube_player_init(event) {
     if(player_status) {
         modal.classList.add('modal-video-box_opened');
         body.style.overflow = 'hidden';
-        var id = event.target.dataset.youtubeId;
+        const id = event.target.dataset.youtubeId;
         player.loadVideoById(id, 0, 'default');
-        var url = 'https://img.youtube.com/vi/' + id + '/maxresdefault.jpg';
+        const url = 'https://img.youtube.com/vi/' + id + '/maxresdefault.jpg';
         video_cover.style.backgroundImage = 'url(' + url + ')';
     }
 }
 
 function player_ready() {
     player_status = true;
-    var video_covers = document.querySelectorAll('.unavailable');
+    const video_covers = document.querySelectorAll('.unavailable');
     video_covers.forEach(function (cover) {
         cover.classList.remove('unavailable');
     })
