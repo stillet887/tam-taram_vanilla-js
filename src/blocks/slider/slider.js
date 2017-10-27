@@ -17,7 +17,7 @@ function slider_init(options){
         }
 
         var url = 'https://img.youtube.com/vi/' + id + '/maxresdefault.jpg';
-        slide.style.backgroundImage = "url(" + url + ")";
+        slide.style.backgroundImage = 'url(' + url + ')';
         slide.dataset.youtubeId = id;
         slide.onclick = options.img_event;
         container.appendChild(slide);
@@ -62,15 +62,15 @@ function slider_init(options){
 
     function update_arrows_styles() {
         if (available_offset_to_right > 0) {
-            right_arrow.classList.add('slider__arrow_enabled')
+            right_arrow.classList.add('slider__arrow_enabled');
         } else {
-            right_arrow.classList.remove('slider__arrow_enabled')
+            right_arrow.classList.remove('slider__arrow_enabled');
         }
 
         if (available_offset_to_left > 0) {
-            left_arrow.classList.add('slider__arrow_enabled')
+            left_arrow.classList.add('slider__arrow_enabled');
         } else {
-            left_arrow.classList.remove('slider__arrow_enabled')
+            left_arrow.classList.remove('slider__arrow_enabled');
         }
     }
 

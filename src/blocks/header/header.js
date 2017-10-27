@@ -7,6 +7,6 @@ menu_button.onclick = open_links;
 
 function open_links() {
     menu_button.classList.toggle('header__menu-button_pressed');
-    menu_close_button.classList.toggle('header__close-button_visible')
+    menu_close_button.classList.toggle('header__close-button_visible');
     header__nav.classList.toggle('header__nav_mobile-opened');
 }

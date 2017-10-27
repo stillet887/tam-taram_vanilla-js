@@ -1,16 +1,17 @@
 .modal-video-box {
     position: fixed;
-    z-index: -1;
-    bottom: 0;
+    z-index: 15;
+    bottom: -100%;
     left: 0;
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.95);
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: opacity 0.3s ease, bottom 0.1s ease 0.3s;
 
     &_opened {
         opacity: 1;
+        bottom: 0;
     }
 
     &__close {
@@ -22,9 +23,10 @@
         background: url('img/close.png');
         background-size: 100px;
         position: absolute;
-        z-index: 1;
+        z-index: 2;
         right: 20px;
         top: 20px;
+        cursor: pointer;
 
         &:hover {
             background-size: 105px;
@@ -52,5 +54,36 @@
         position: absolute;
         width: 100%;
         height: 100%;
+    }
+
+    &__cover {
+        position: fixed;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background: black no-repeat 50%;
+        background-size: 100%;
+
+        @media @desktop {
+            background-position: 45%;
+        }
+
+        &_hidden {
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            width: 30%;
+            height: 60%;
+            background: url('img/play_icon.svg') no-repeat 50%;
+            background-size: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
 }

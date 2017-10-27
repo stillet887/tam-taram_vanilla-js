@@ -14,5 +14,5 @@ function change_selected_option(event) {
             option.classList.add('custom-select__option_selected');
             custom_select_current_value.innerHTML = option.innerHTML;
         }
-    })
+    });
 }
